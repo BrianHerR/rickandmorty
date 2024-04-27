@@ -1,57 +1,59 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useLocation, Link } from "react-router-dom";
-import { removeFav, addFav } from "../../features/characters/charactersSlice";
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useLocation, Link } from 'react-router-dom'
+import { removeFav, addFav } from '../../features/characters/charactersSlice'
 
 function Card(props) {
-  const location = useLocation();
+    const location = useLocation()
 
-  const { onClose, id, origin, name, status, species, gender, image } = props;
+    const { onClose, id, origin, name, status, species, gender, image } = props
 
-  const characters = useSelector((state) => state.characters.characters);
+    const characters = useSelector((state) => state.characters.characters)
 
-  const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
-  const favorites = useSelector((state) => state.characters.myFavorites);
+    const favorites = useSelector((state) => state.characters.myFavorites)
 
-  const isFav = favorites.some((fav) => fav.id === id);
+    const isFav = favorites.some((fav) => fav.id === id)
 
-  const handleFavorite = () => {
-    if (isFav) {
-      dispatch(removeFav(id));
-    } else {
-      dispatch(addFav(props));
+    const handleFavorite = () => {
+        if (isFav) {
+            dispatch(removeFav(id))
+        } else {
+            dispatch(addFav(props))
+        }
     }
-  };
 
-  useEffect(() => {
-    characters.forEach((fav) => {
-      if (fav.id === id.toString()) {
-        setIsfav(true);
-      }
-    });
-  }, [characters]);
-  return (
-    <div>
-      <div>
-        <button onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button>
-        {location.pathname !== "/favorites" && <button onClick={() => onClose(id)}>x</button>}
-      </div>
+    useEffect(() => {
+        characters.forEach((fav) => {
+            if (fav.id === id.toString()) {
+                setIsfav(true)
+            }
+        })
+    }, [characters])
+    return (
+        <div className="flex h-2/3 flex-col items-center justify-center rounded-md bg-purple-900 text-white">
+            <div className="flex w-full justify-around p-1">
+                <button className='md:btn' onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>
+                {location.pathname !== '/favorites' && (
+                    <button className=' text-lg' onClick={() => onClose(id)}>x</button>
+                )}
+            </div>
 
-      <Link to={`/detail/${id}`}>
-        <h2>{name}</h2>
-      </Link>
+            <Link to={`/detail/${id}`}>
+                <h2 className="py-1 text-lg hover:bg-purple-400">{name}</h2>
+            </Link>
+            <div className="py-1">
+                <h2>{status}</h2>
+                <h2>{species}</h2>
+                <h2>{gender}</h2>
+                <h3>{origin.name}</h3>
+                <p>id: {id}</p>
+            </div>
 
-      <h2>{status}</h2>
-      <h2>{species}</h2>
-      <h2>{gender}</h2>
-      <h3>{origin.name}</h3>
-      <p>id: {id}</p>
-      <div>
-        <img src={image} alt="" />
-      </div>
-    </div>
-  );
+            <img className="w-11/12 rounded-lg pb-2" src={image} alt="" />
+        </div>
+    )
 }
 
-export default Card;
+export default Card
