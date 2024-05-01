@@ -20,7 +20,7 @@ function Detail() {
     }, [id])
 
     return (
-        <div className='lg:flex bg-purple-950 flex-row-reverse justify-between p-4 m-2 rounded-md text-white'>
+        <div className='lg:flex dark:bg-purple-950 bg-purple-600 flex-row-reverse justify-between p-4 m-2 rounded-md text-white'>
             <div className='leading-loose w-1/2 flex-col justify-center pb-1'>
             <h2>Nombre : {character?.name}</h2>
             <h2>Genero : {character?.gender}</h2>
