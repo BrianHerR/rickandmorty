@@ -35,7 +35,7 @@ function App() {
         )
     }
     return (
-        <div className="dark:bg-black bg-slate-100 min-h-svh">
+        <div className="dark:bg-black bg-slate-300 min-h-svh mx-auto">
             
                 {location.pathname !== '/' ? (
                     <Navbar onSearch={onSearch} />

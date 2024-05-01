@@ -10,7 +10,7 @@ function Searchbar({ onSearch }) {
         <div className="flex justify-around pt-4">
             <input
                 className="rounded-md px-6 text-center text-xs
-                text-black decoration-slate-300"
+                dark:text-black dark:decoration-slate-300 text-neutral-900 bg-slate-200 ring-offset-2 ring "
                 placeholder="id de personaje..."
                 type="search"
                 onChange={handleChange}
@@ -18,7 +18,7 @@ function Searchbar({ onSearch }) {
             />
 
             <button
-                className="rounded-xl border-2 border-solid border-white bg-purple-700 px-4 py-1 text-sm hover:bg-purple-400"
+                className="rounded-xl border-2 border-solid dark:border-white dark:bg-purple-700 px-4 py-1 text-sm hover:bg-purple-400"
                 onClick={() => {
                     onSearch(character)
                 }}

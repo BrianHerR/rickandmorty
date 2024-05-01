@@ -32,7 +32,7 @@ function Card(props) {
         })
     }, [characters])
     return (
-        <div className="flex h-2/3 flex-col items-center justify-center rounded-md bg-purple-900 text-white">
+        <div className="flex h-2/3 flex-col items-center justify-center rounded-md bg-purple-600 text-neutral-300 dark:bg-purple-900 dark:text-white">
             <div className="flex w-full justify-around p-1">
                 <button className='md:btn' onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>
                 {location.pathname !== '/favorites' && (
@@ -41,7 +41,7 @@ function Card(props) {
             </div>
 
             <Link to={`/detail/${id}`}>
-                <h2 className="py-1 text-lg hover:bg-purple-400">{name}</h2>
+                <h2 className="p-2  text-lg rounded-lg hover:bg-purple-400">{name}</h2>
             </Link>
             <div className="py-1">
                 <h2>{status}</h2>
