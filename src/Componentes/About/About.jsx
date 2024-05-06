@@ -1,8 +1,9 @@
 import React from "react";
 
+
 function About() {
   return <div className="flex flex-col md:flex-row md:justify-around items-center justify-center bg-purple-600 dark:bg-purple-900 p-4  mt-2 mx-2 rounded-md max-w-2/#">
-    <img className=" rounded-full " src="https://media.licdn.com/dms/image/D4D35AQGLgMGdXpJO1A/profile-framedphoto-shrink_400_400/0/1707424436905?e=1714827600&v=beta&t=Ng6WamBHHpxM900ptcqDSzz6vRVrdemAg84bO2iqqkk" alt="brian rojas" />
+    <img className=" rounded-full " src="src\image\cv-foto.jpg" alt="brian rojas" />
     
 <div className="pt-4 dark:text-white text-purple-200 leading-relaxed size-2/3 ">
  <p>
