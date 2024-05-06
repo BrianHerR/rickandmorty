@@ -1,9 +1,10 @@
 import React from "react";
+import cvfoto from "../../image/brianrojas.jpg"
 
 
 function About() {
   return <div className="flex flex-col md:flex-row md:justify-around items-center justify-center bg-purple-600 dark:bg-purple-900 p-4  mt-2 mx-2 rounded-md max-w-2/#">
-    <img className=" rounded-full " src="src\image\cv-foto.jpg" alt="brian rojas" />
+    <img className=" rounded-full " src={cvfoto} alt="brian rojas" />
     
 <div className="pt-4 dark:text-white text-purple-200 leading-relaxed size-2/3 ">
  <p>
